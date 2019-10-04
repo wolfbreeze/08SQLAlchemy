@@ -128,18 +128,21 @@ def tobs():
     dict_temps1 = dict_temps
     return jsonify(dict_temps1)
 
-
+#using the Flask app do this when the route is requested.
+# do this is print these text statements.
 @app.route("/api/v1.0/<start>")
 def start():
     print("Server received request for 'start' page...")
     return "Welcome to my start page!"
 
-
+#using the Flask app do this when the route is requested.
+# do this is print these text statements.
 @app.route("/api/v1.0/<start>/<end>")
 def end():
     print("Server received request for 'end' page...")
     return "Welcome to my end page!"
 
+#Run the app if the _name_ of app is still _main_, here we go again
 if __name__ == "__main__":
     app.run(debug=True)
 
