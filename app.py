@@ -1,3 +1,6 @@
+# Thank you for your time Joe.
+# Commenting out as much as I can
+
 from flask import Flask, jsonify
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -18,21 +21,25 @@ Base.prepare(engine, reflect=True)
 # We can view all of the classes that automap found
 Base.classes.keys()
 
+# creates simple connection to Named tables in sql db, to be easily called later
 # Save references to each table
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
+#creates connection to send queries to sql db
 # Create our session (link) from Python to the DB
 session = Session(engine)
 
-
+#creates a dictionary of station names
 #open homeworkutd.ipynb import dict_precip, stations, dict_temps
-
 stations_data = ["USC00519281", "USC00519397", "USC00513117", "USC00519523", "USC00516128", "USC00514830", "USC00511918", "USC00517948", "USC00518838"]
 
-# 2. Create an app, being sure to pass __name__
+#Creates the Flask app to pass the information when called
+#  2. Create an app, being sure to pass __name__
 app = Flask(__name__)
 
+#using the Flask app do this when the route is requested.
+# do this is print these text statements.
 # 3. Define what to do when a user hits the index route
 @app.route("/")
 def home():
