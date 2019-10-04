@@ -8,11 +8,13 @@ from sqlalchemy.sql import label
 # connets sql engine to the sql database file
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
+#imports tables names here at process
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
 
+# lists classes found in SQL db
 # We can view all of the classes that automap found
 Base.classes.keys()
 
